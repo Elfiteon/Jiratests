@@ -3,8 +3,8 @@ services:
     image: postgres:15.8
     hostname: postgresql
     environment:
-      - 'POSTGRES_USER=jira'
-      - 'POSTGRES_PASSWORD=jellyfish'
+      - 'POSTGRES_USER=${DB_USER}'
+      - 'POSTGRES_PASSWORD=${DB_PASSWORD}'
       - 'POSTGRES_DB=jiradb'
       - 'POSTGRES_ENCODING=UTF8'
       - 'POSTGRES_COLLATE=C'
