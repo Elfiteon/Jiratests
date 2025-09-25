@@ -9,8 +9,13 @@ services:
       - 'POSTGRES_ENCODING=UTF8'
       - 'POSTGRES_COLLATE=C'
       - 'POSTGRES_COLLATE_TYPE=C'
+    volumes:
+      - db-data:/var/lib/postgresql/data
   jira2:
     image: atlassian/jira-software:latest
     hostname: jira2
     ports:
       - '81:8080'
+
+volumes:
+  db-data:
