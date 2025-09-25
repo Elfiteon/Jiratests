@@ -1,0 +1,16 @@
+services:
+  db2:
+    image: postgres:15.8
+    hostname: postgresql
+    environment:
+      - 'POSTGRES_USER=jira'
+      - 'POSTGRES_PASSWORD=jellyfish'
+      - 'POSTGRES_DB=jiradb'
+      - 'POSTGRES_ENCODING=UTF8'
+      - 'POSTGRES_COLLATE=C'
+      - 'POSTGRES_COLLATE_TYPE=C'
+  jira2:
+    image: atlassian/jira-software:latest
+    hostname: jira2
+    ports:
+      - '81:8080'
